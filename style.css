@@ -2,44 +2,37 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    overflow: hidden; /* Dikey kaydırmayı engeller */
+    overflow: hidden;
 }
 
-/* ARKA PLAN BÖLÜMÜ */
 .background-image-container {
-    position: fixed; /* Ekranı sabitler */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* İçeriğin arkasında kalmasını sağlar */
+    z-index: -1;
     
-    /* BURAYI KENDİ GÖRSELİNİZLE DEĞİŞTİRİN */
-    background-image: url('foto-18mp.jpg'); /* İlk fotoğrafı arkaplan yapabilirsiniz */
+    background-image: url('foto-18mp.jpg');
     background-size: cover;
     background-position: center;
     
-    /* BLUR EFEKTİ */
-    filter: blur(8px); /* Blur miktarını buradan ayarlayın */
-    transform: scale(1.05); /* Blur efekti kenarlarda boşluk bırakmasın diye hafifçe büyütülür */
+    filter: blur(8px);
+    transform: scale(1.05);
 }
-/* ARKA PLAN BÖLÜMÜ BİTİŞ */
 
 
 .carousel-container {
-    /* Kaydırma alanını ekranın tamamı yapar */
     width: 100vw;
     height: 100vh;
     display: flex;
     
-    /* ÖNEMLİ: Yatay kaydırmayı (swipe) ve snap özelliğini etkinleştirir */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth; 
 }
 
 .slide {
-    /* Her slaytın ekranın tamamını kaplamasını sağlar */
     min-width: 100vw;
     height: 100vh;
     display: flex;
@@ -48,19 +41,16 @@ body {
     align-items: center;
     position: relative;
     
-    /* Slaytların tam oturmasını sağlar */
     scroll-snap-align: start; 
     
-    /* İçerik daha okunaklı olsun diye yarı saydam arka plan */
     background-color: rgba(255, 255, 255, 0.4); 
 }
 
 .slide img {
-    /* Görselin ekrana sığmasını sağlar */
     max-width: 90%;
     max-height: 80%; 
     object-fit: contain; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Fotoğraflara gölge ekler */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .caption {
